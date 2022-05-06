@@ -6,14 +6,14 @@ struct preferences
     float exercise_hours;
 };
 
-struct fish
+typedef struct fish
 {
     const char *name;
     const char *species;
     int teeth;
     int age;
     struct preferences care; //New name, but the old meaning
-};
+}fishy;
 
 void catalog(struct fish f)
 {
@@ -26,7 +26,7 @@ void label(struct fish f){
 
 int main()
 {
-    struct fish snappy = {"Зубастик", "пиранья", 69, 4, {"MEAT", 7.6}};
+    fishy snappy = {"Зубастик", "пиранья", 69, 4, {"MEAT", 7.6}};
     catalog(snappy);
     label(snappy);
     printf("Зубастик кушает: %s\n", snappy.care.food);
